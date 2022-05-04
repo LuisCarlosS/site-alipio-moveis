@@ -1,0 +1,36 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.topo{
+    background: #ffae1f url("../imagens/fundosite.png") no-repeat center;
+    background-size: cover;
+    height: 150px;
+}
+.logo{
+    max-height: 100px;
+}
+.form-control{
+    border: none;
+}
+.form-control:focus {
+    border-color: #cccccc;
+    outline: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+a{
+    text-decoration: none;
+}
+nav ul li a:hover{
+    text-decoration: underline;
+}
+.chama-zap{
+    color: #25B825;
+}
+.favoritos{
+    border-radius: 5px;
+    color: #ffae1f;
+}
+.favoritos:hover{
+    color: #fff;
+}
