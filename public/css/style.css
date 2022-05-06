@@ -34,3 +34,23 @@ nav ul li a:hover{
 .favoritos:hover{
     color: #fff;
 }
+.produtos{
+    border-right: 2px solid rgb(220, 220, 220);
+    min-height: 70vh;
+}
+.conteudo{
+    min-height: 70vh;
+}
+.rodape{
+    background-color: #ffae1f;
+}
+.sal{
+    border-right: 2px solid rgb(220, 220, 220);
+}
+.rodape p{
+    font-weight: bold;
+    color: #fff;
+}
+.td-info{
+    align-items: flex-start;
+}
