@@ -11,4 +11,22 @@ class HomeControler extends Controller
 
         return view("home", $data);
     }
+
+    public function loginCliente(){
+        $data = [];
+
+        return view("login-cliente", $data);
+    }
+
+    public function loginAdm(){
+        $data = [];
+
+        return view("login-adm", $data);
+    }
+
+    public function esqueceuSenha(){
+        $data = [];
+
+        return view("esqueceu-senha", $data);
+    }
 }

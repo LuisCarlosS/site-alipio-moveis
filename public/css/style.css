@@ -9,10 +9,10 @@ body{
 .logo{
     max-height: 100px;
 }
-.form-control{
+.input-topo{
     border: none;
 }
-.form-control:focus {
+.input-topo:focus {
     border-color: #cccccc;
     outline: 0;
     -webkit-box-shadow: none;
@@ -20,6 +20,10 @@ body{
 }
 a{
     text-decoration: none;
+}
+#modal-login{
+    margin-top: 90px;
+    margin-right: 300px;
 }
 nav ul li a:hover{
     text-decoration: underline;
