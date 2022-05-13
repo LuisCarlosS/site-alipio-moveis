@@ -29,4 +29,10 @@ class HomeControler extends Controller
 
         return view("esqueceu-senha", $data);
     }
+
+    public function cadastroCliente(){
+        $data = [];
+
+        return view("cadastro-cliente", $data);
+    }
 }

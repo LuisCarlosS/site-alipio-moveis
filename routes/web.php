@@ -7,3 +7,4 @@ Route::get('/', [HomeControler::class, 'index'])->name("home");
 Route::get('/login-cliente', [HomeControler::class, 'loginCliente'])->name("login-cliente");
 Route::get('/login-adm', [HomeControler::class, 'loginAdm'])->name("login-adm");
 Route::get('/esqueceu-senha', [HomeControler::class, 'esqueceuSenha'])->name("esqueceu-senha");
+Route::get('/cadastro-cliente', [HomeControler::class, 'cadastroCliente'])->name("cadastro-cliente");

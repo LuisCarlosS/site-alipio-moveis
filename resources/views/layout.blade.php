@@ -128,7 +128,7 @@
     @yield("conteudo")
 
     
-    <footer class="bg-site rodape">
+    <footer class="bg-site rodape mt-3">
         <div class="container">
             <div class="row pt-2 justify-content-center td-info">
                 <div class="horario col-5 text-center row">
