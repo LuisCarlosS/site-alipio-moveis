@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class cliente extends Model
+class cliente extends BaseModel
 {
-    use HasFactory;
+    protected $table = "clientes";
+    protected $fillable = ['email', 'senha', 'nome_completo', 'cpf', 'celular', 'cidade', 'bairro_povoado'];
+
+    public function beforeSave(){
+        
+    }
 }

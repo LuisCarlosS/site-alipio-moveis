@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class tipo_produto extends Model
+class tipo_produto extends BaseModel
 {
-    use HasFactory;
+    protected $table = "tipo_produtos";
+    protected $fillable = ['tipo'];
+
+    public function beforeSave(){
+        
+    }
 }

@@ -19,11 +19,11 @@
                 <form action="" method="post">
                     @csrf
                     <div class="column">
-                        <div class="form-group col-12">
+                        <div class="form-group col-12 mb-3">
                             <label>E-mail:</label><br>
                             <input type="email" name="usuario" id="usuario" class="form-control">
                         </div>
-                        <div class="form-group mb-2 col-12">
+                        <div class="form-group col-12 mb-3">
                             <label>Senha:</label>
                             <input type="password" name="senha" id="senha" class="form-control">
                         </div>

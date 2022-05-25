@@ -110,19 +110,19 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        @if(Session::has('success') && Session::get('success') != '')
+        <div class="m-2 alert alert-success">
+            {{ Session::get('success') }}
+        </div>
+        @endif
 
+        @if(Session::has('error') && Session::get('error') != '')
+        <div class="m-2 alert alert-warning">
+            {{ Session::get('error') }}
+        </div>
+        @endif
     </div>
-    @if(Session::has('success') && Session::get('success') != '')
-    <div class="m-2 alert alert-success">
-        {{ Session::get('success') }}
-    </div>
-    @endif
-
-    @if(Session::has('error') && Session::get('error') != '')
-    <div class="m-2 alert alert-warning">
-        {{ Session::get('error') }}
-    </div>
-    @endif
 
     
     @yield("conteudo")

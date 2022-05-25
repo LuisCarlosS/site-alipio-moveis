@@ -16,14 +16,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-4 col-sm-12 col-10">
-                <form action="" method="post">
+                <form action="{{ route('login-adm') }}" method="post">
                     @csrf
                     <div class="column">
-                        <div class="form-group col-12">
+                        <div class="form-group col-12 mb-3">
                             <label>Usuário:</label><br>
                             <input type="text" name="usuario" id="usuario" class="form-control">
                         </div>
-                        <div class="form-group mb-2 col-12">
+                        <div class="form-group col-12 mb-3">
                             <label>Senha:</label>
                             <input type="password" name="senha" id="senha" class="form-control">
                         </div>

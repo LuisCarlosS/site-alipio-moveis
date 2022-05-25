@@ -16,12 +16,12 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-4 col-sm-12 col-10">
-                <form action="" method="post">
+                <form action="{{ route('esqueceu-senha') }}" method="post">
                     @csrf
                     <div class="column">
                         <div class="form-group col-12">
                             <label>Informe o email:</label><br>
-                            <input type="text" name="usuario" id="usuario" class="form-control">
+                            <input type="text" name="email" id="email" class="form-control">
                         </div>
                     </div>
                     <div class="mt-2">

@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class produto extends Model
+class produto extends BaseModel
 {
-    use HasFactory;
+    protected $table = "produtos";
+    protected $fillable = ['nome', 'foto', 'codigo', 'descricao', 'marca', 'status', 'dt_postagem', 'tipo_produto_id'];
+
+    public function beforeSave(){
+        
+    }
 }

@@ -17,7 +17,12 @@ class CreateProdutosTable extends Migration
             $table->increments('id');
 
             $table->string('nome', 150);
-            $table->string('foto', 30);
+            $table->string('foto1', 30);
+            $table->string('foto2', 30);
+            $table->string('foto3', 30);
+            $table->string('foto4', 30);
+            $table->string('foto5', 30);
+            $table->string('foto6', 30);
             $table->string('codigo', 30);
             $table->text('descricao', 400);
             $table->string('marca', 30);

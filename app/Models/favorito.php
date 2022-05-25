@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class favorito extends Model
+class favorito extends BaseModel
 {
-    use HasFactory;
+    protected $table = "favoritos";
+    protected $fillable = ['produto_id', 'cliente_id'];
+
+    public function beforeSave(){
+        
+    }
 }
