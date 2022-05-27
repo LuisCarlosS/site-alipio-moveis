@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-9 col-sm-12 col-10">
-                <form action="" method="post">
+                <form action="{{ route('cliente.salvar-cliente') }}" method="post">
                     @csrf
                     <div class="row">
                         <div class="form-group col-4 mt-2">
@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group col-8 mt-2">
                             <label>Nome completo:</label><br>
-                            <input type="text" name="nome" id="nome" class="form-control" >
+                            <input type="text" name="nome_completo" id="nome_completo" class="form-control" >
                         </div>
                         <div class="form-group col-4 mt-2">
                             <label>Cpf:</label><br>

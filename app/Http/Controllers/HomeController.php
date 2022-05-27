@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\Models\cliente;
 
 class HomeController extends Controller
 {
@@ -30,41 +29,6 @@ class HomeController extends Controller
         }
 
         return view("login-adm", $data);
-    }
-
-    public function loginCliente(){
-        $data = [];
-
-        return view("login-cliente", $data);
-    }
-
-    public function esqueceuSenha(Request $request){
-        $data = [];
-
-        if($request->isMethod("post")){
-            $email = $request->input("email", "");
-            $newPass = Str::random(10);
-
-            $user = cliente::where("email", $email)->first();
-            if(!$user){
-                $request->session()->flash("success", "Email inválido");
-                return \redirect()->route("esqueceu-senha");
-            }
-
-            $user->password = \Hash::make($newPass);
-            $user->save();
-
-            $request->session()->flash("error", "Nova senha enviada para o email.");
-            return \redirect()->route("login-adm");
-        }
-
-        return view("esqueceu-senha", $data);
-    }
-
-    public function cadastroCliente(){
-        $data = [];
-
-        return view("cadastro-cliente", $data);
     }
 
     public function logout(){

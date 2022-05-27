@@ -16,12 +16,16 @@ abstract class BaseModel extends Model
     protected $errors;
 
     public function validate():bool{
-        $validator = \Validator::make($this->attributes, $this->rules, $this->messages);
+        $validator = \Validator::make($this->attributes, $this->rules(), $this->messages);
         if($validator->fails()){
             $this->errors = $validator->errors();
             return false;
         }
         return true;
+    }
+
+    public function rules(){
+        return $this->rules;
     }
 
     /**

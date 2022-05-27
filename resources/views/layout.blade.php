@@ -42,7 +42,7 @@
                     <div class="modal-body">
                         <div id="modal-conteudo">
                             <a href="{{ route('login-adm') }}" class="p-2 btn btn-black-50">Administrador</a>
-                            <a href="{{ route('login-cliente') }}" class="p-2 btn btn-primary float-end">Cliente</a>
+                            <a href="{{ route('cliente.login-cliente') }}" class="p-2 btn btn-primary float-end">Cliente</a>
                         </div>
                 </div>
             </div>
@@ -120,6 +120,16 @@
         @if(Session::has('error') && Session::get('error') != '')
         <div class="m-2 alert alert-warning">
             {{ Session::get('error') }}
+        </div>
+        @endif
+
+        @if($errors->any())
+        <div class="m-2 alert alert-warning">
+            <ul>
+                @foreach($errors->all() as $erro)
+                    <li>{{ $erro }}</li>
+                @endforeach
+            </ul>
         </div>
         @endif
     </div>
@@ -236,4 +246,5 @@
         </div>
     </footer>
 </body>
+<script type="text/javascript" src="{{ asset('js/mascara.js') }}"></script>
 </html>

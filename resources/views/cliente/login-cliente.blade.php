@@ -29,8 +29,8 @@
                         </div>
                     </div>
                     <div class="mb-4">
-                        <a href="{{ route('cadastro-cliente') }}">Cadastrar-se</a> - 
-                        <a href="{{ route('esqueceu-senha') }}">Esqueci a senha</a>
+                        <a href="{{ route('cliente.cadastro-cliente') }}">Cadastrar-se</a> - 
+                        <a href="{{ route('cliente.esqueceu-senha') }}">Esqueci a senha</a>
                         <input type="submit" value="Entrar" class="btn btn-primary float-end">
                     </div>
                 </form>
