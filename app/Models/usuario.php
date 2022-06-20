@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 
-class cliente extends BaseModel implements Authenticatable
+class usuario extends BaseModel implements Authenticatable
 {
-    protected $table = "clientes";
-    protected $fillable = ['email', 'senha', 'nome_completo', 'cpf', 'celular', 'cidade', 'bairro_povoado'];
+    protected $table = "usuarios";
+    protected $fillable = ['email', 'senha', 'nome_completo', 'cpf', 'celular', 'cidade', 'bairro_povoado', 'perfil'];
 
    
     protected $messages = [
@@ -23,10 +23,10 @@ class cliente extends BaseModel implements Authenticatable
 
     public function rules(){
         return [
-            'email' => 'required|unique:clientes,email, ' . $this->id . '|email',
+            'email' => 'required|unique:usuarios,email, ' . $this->id . '|email',
             'senha' => 'required',
             'nome_completo' => 'required',
-            'cpf' => 'unique:clientes',
+            'cpf' => 'unique:usuarios',
             'cidade' => 'required',
             'bairro_povoado' => 'required'
         ];

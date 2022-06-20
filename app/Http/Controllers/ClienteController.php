@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\cliente;
+use App\Models\usuario;
+use Auth;
 
 class ClienteController extends Controller
 {
     public function loginCliente(){
         $data = [];
 
-        return view("cliente.login-cliente", $data);
+        return view("cliente/home", $data);
     }
 
     public function cadastroCliente(){
@@ -29,7 +30,7 @@ class ClienteController extends Controller
                 return redirect()->route("cliente.cadastro-cliente");
             }
 
-            $cliente = new cliente;
+            $cliente = new usuario;
             $cliente->email = $request->input("email");
             $cliente->senha = \Hash::make($senha);
             $cliente->nome_completo = $request->input("nome_completo");
@@ -37,6 +38,7 @@ class ClienteController extends Controller
             $cliente->celular = $request->input("celular");
             $cliente->cidade = $request->input("cidade");
             $cliente->bairro_povoado = $request->input("bairro_povoado");
+            $cliente->perfil = "CLIENTE";
 
             if(!$cliente->save()){
                 return back()->withErrors($cliente->getErrors());
@@ -58,7 +60,7 @@ class ClienteController extends Controller
             $email = $request->input("email", "");
             $newPass = Str::random(10);
 
-            $user = cliente::where("email", $email)->first();
+            $user = usuario::where("email", $email)->first();
             if(!$user){
                 $request->session()->flash("success", "Email inválido");
                 return \redirect()->route("esqueceu-senha");
@@ -83,6 +85,11 @@ class ClienteController extends Controller
         }
 
         return view("esqueceu-senha", $data);
+    }
+
+    public function logout(){
+        Auth::logout();
+        return \redirect()->route("home");
     }
 
 }

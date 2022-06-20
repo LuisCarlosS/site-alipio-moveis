@@ -17,15 +17,15 @@ class CreateFavoritosTable extends Migration
             $table->increments('id');
 
             $table->integer('produto_id')->unsigned();
-            $table->integer('cliente_id')->unsigned();
+            $table->integer('usuario_id')->unsigned();
 
             $table->foreign("produto_id")
                 ->references("id")
                 ->on("produtos");
 
-            $table->foreign("cliente_id")
+            $table->foreign("usuario_id")
                 ->references("id")
-                ->on("clientes");
+                ->on("usuarios");
 
             $table->timestamps();
         });

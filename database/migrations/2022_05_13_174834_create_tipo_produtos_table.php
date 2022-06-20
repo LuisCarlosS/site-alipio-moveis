@@ -17,6 +17,8 @@ class CreateTipoProdutosTable extends Migration
             $table->increments('id');
 
             $table->string('tipo', 100)->unique();
+
+            $table->timestamps();
         });
     }
 

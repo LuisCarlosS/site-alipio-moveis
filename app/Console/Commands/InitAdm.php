@@ -37,21 +37,27 @@ class InitAdm extends Command
      */
     public function handle()
     {
-        $usuario = $this->argument("user");
+        $email = $this->argument("user");
         $senha = $this->argument("pass");
 
         echo "Command iniciando";
-        echo "\nCadastrando o usuario " . $usuario . " no banco de dados";
+        echo "\nCadastrando o usuario " . $email . " no banco de dados";
         
         try{
-            $dbUser = \App\Models\adm::where("usuario", $usuario)->first();
+            $dbUser = \App\Models\usuario::where("email", $email)->first();
             if($dbUser){
-                throw new \Exception("Usuario já cadastrado no banco de dados");
+                throw new \Exception("E-mail já cadastrado no banco de dados");
             }
 
-            $dbUser = new \App\Models\adm();
-            $dbUser->usuario = $usuario;
+            $dbUser = new \App\Models\usuario();
+            $dbUser->email = $email;
             $dbUser->senha = \Hash::make($senha);
+            $dbUser->nome_completo = "ADMIN";
+            $dbUser->cpf = "999.999.999-99";
+            $dbUser->celular = "(99)99999-9999";
+            $dbUser->cidade = "SAL";
+            $dbUser->bairro_povoado = "CENTRO";
+            $dbUser->perfil = "ADMIN";
 
             $dbUser->save();
             echo "\n\nUsuario inserido com sucesso!";

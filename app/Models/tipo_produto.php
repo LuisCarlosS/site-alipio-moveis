@@ -10,4 +10,15 @@ class tipo_produto extends BaseModel
     public function beforeSave(){
         
     }
+
+    protected $messages = [
+        'tipo.required' => 'Campo vazio.',
+        'tipo.unique' => 'Este tipo de produto já está cadastrado.'
+    ];
+
+    public function rules(){
+        return [
+            'tipo' => 'required|unique:tipo_produtos',
+        ];
+    }
 }

@@ -68,4 +68,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ### run the command to create a new user
 
-php artisan command:init-project usuario senha
+php artisan command:init-project email senha

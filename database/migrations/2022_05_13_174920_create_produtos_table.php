@@ -18,12 +18,12 @@ class CreateProdutosTable extends Migration
 
             $table->string('nome', 150);
             $table->string('foto1', 30);
-            $table->string('foto2', 30);
-            $table->string('foto3', 30);
-            $table->string('foto4', 30);
-            $table->string('foto5', 30);
-            $table->string('foto6', 30);
-            $table->string('codigo', 30);
+            $table->string('foto2', 30)->nullable();
+            $table->string('foto3', 30)->nullable();
+            $table->string('foto4', 30)->nullable();
+            $table->string('foto5', 30)->nullable();
+            $table->string('foto6', 30)->nullable();
+            $table->string('codigo', 30)->unique();
             $table->text('descricao', 400);
             $table->string('marca', 30);
             $table->string('status', 10);

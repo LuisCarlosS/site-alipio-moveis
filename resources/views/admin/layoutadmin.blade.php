@@ -52,8 +52,7 @@
         </div>
     </nav>
 
-    
-
+<div class="container">
     </div>
     @if(Session::has('success') && Session::get('success') != '')
     <div class="m-2 alert alert-success">
@@ -66,6 +65,17 @@
         {{ Session::get('error') }}
     </div>
     @endif
+
+    @if($errors->any())
+    <div class="m-2 alert alert-warning">
+        <ul>
+            @foreach($errors->all() as $erro)
+                <li>{{ $erro }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+</div>
 
     
     @yield("conteudo")

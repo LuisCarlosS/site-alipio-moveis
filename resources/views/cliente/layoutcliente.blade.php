@@ -28,7 +28,7 @@
                 <a href="" class="p-2 favoritos bg-black"><i class="fa-solid fa-heart"></i> Favoritos</a>
             </div>
             <div class="col-2 text-center favoritos">
-                <a href="{{ route('login') }}" class="p-2 favoritos bg-black"><i class="fa-solid fa-user"></i> Entre ou cadastre-se</a>
+            <a href="{{ route('logout') }}" class="p-2 favoritos bg-black float-end"><i class="fa-solid fa-user"></i> Sair</a>
             </div>
         </div>
     </header>

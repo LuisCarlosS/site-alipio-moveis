@@ -21,10 +21,7 @@ body{
 a{
     text-decoration: none;
 }
-#modal-login{
-    margin-top: 90px;
-    margin-right: 300px;
-}
+
 nav ul li a:hover{
     text-decoration: underline;
 }
@@ -57,4 +54,20 @@ nav ul li a:hover{
 }
 .td-info{
     align-items: flex-start;
+}
+.produtos ul{
+    padding-left: 0;
+}
+.produtos ul li{
+    color: black;
+    list-style-type: none;
+    padding-left: 5px;
+}
+.produtos ul a li{
+    background-color: #ffae1f;
+    border-bottom: 1px solid black;
+}
+.produtos ul a li:hover{
+    background-color: black;
+    color: #ffae1f;
 }

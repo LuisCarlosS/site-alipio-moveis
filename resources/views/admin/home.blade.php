@@ -3,11 +3,12 @@
     <main class="container conteudo">
         <div class="row pt-4">
             <div class="col-3 pe-4 produtos">
-                <h4 class="mb-3">Cadastrar nova categoria</h4>
-                <form action="">
+                <h4 class="mb-3">Cadastrar tipo de produto</h4>
+                <form action="{{ route('produto.salvar-tipo') }}" method="post">
+                    @csrf
                     <div class="column">
                         <div class="form-group">
-                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Categoria">
+                            <input type="text" name="tipo" id="tipo" class="form-control" placeholder="Tipo de produto">
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Salvar" class="btn btn-primary mt-3 float-end">
@@ -17,7 +18,8 @@
             </div>
             <div class="col-9 ps-4">
                 <h3 class="mb-3">Dados do produto</h3>
-                <form action="">
+                <form action="{{ route('produto.salvar-produto') }}" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="row">
                         <div class="form-group mb-2 col-9">
                             <label>Nome:</label><br>
@@ -61,9 +63,13 @@
                         </div>
                         <div class="form-group mb-2 col-3">
                             <label>Categoria:</label><br>
-                            <select name="tipo_servico_id" id="tipo_servico_id" class="form-control">
+                            <select name="tipo_produto_id" id="tipo_produto_id" class="form-control">
                                 <option value=""></option>
-                                <option value=""></option>
+                                @if(isset($listaTipos))
+                                    @foreach($listaTipos as $tipo_produtos)
+                                    <option value="{{ $tipo_produtos->id }}">{{ $tipo_produtos->tipo }}</option>
+                                    @endforeach
+                                @endif
                             </select>
                         </div>
                         <div class="form-group mb-3 col-3">
