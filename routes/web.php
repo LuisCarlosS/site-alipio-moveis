@@ -38,6 +38,7 @@ Route::prefix("produto")->name("produto.")->group(function(){
 
     Route::post('/salvar-tipo', [ProdutoController::class, 'salvarTipo_produto'])->name("salvar-tipo");
     Route::post('/salvar-produto', [ProdutoController::class, 'salvarProduto'])->name("salvar-produto");
+    Route::get('/detalhes', [ProdutoController::class, 'detalhesProduto'])->name("detalhes");
 
 });
 

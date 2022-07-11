@@ -78,4 +78,14 @@ class ProdutoController extends Controller
         }
         return redirect()->route("admin.home");
     }
+
+    public function detalhesProduto(){
+        $data = [];
+
+        $querytipo = new tipo_produto();
+        $querytipo = $querytipo->orderBy("tipo_produtos.tipo");
+        $data["listaTipos"] = $querytipo->get(['id','tipo']);
+
+        return view("produto/detalhes", $data);
+    }
 }

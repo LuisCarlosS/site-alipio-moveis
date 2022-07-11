@@ -28,7 +28,7 @@
                                         <span>FOGÃO MÔNACO 5 BOCAS ATLAS</span>
                                     </div>
                                 </h5>
-                                <a href="" class="card-link">Detalhes</a>
+                                <a href="{{ route('produto.detalhes') }}" class="card-link">Detalhes</a>
                             </div>
                         </div>
                     </div>
